@@ -47,7 +47,7 @@ def create_rfm_df(df):
 
 dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(dir, 'all_data.csv')
-all_df = pd.read_csv(csv_path)
+all_df = pd.read_csv(filepath)
 
 datetime_columns = ["order_date", "delivery_date"]
 all_df.sort_values(by="order_date", inplace=True)
