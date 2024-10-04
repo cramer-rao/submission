@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -44,7 +45,9 @@ def create_rfm_df(df):
     
     return rfm_df
 
-all_df = pd.read_csv("all_data.csv")
+dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(dir, 'all_data.csv')
+all_df = pd.read_csv(csv_path)
 
 datetime_columns = ["order_date", "delivery_date"]
 all_df.sort_values(by="order_date", inplace=True)
